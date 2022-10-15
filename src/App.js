@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Navbar from "./components/navbar";
+import Login from "./components/login";
+import Register from "./components/register";
+import Gallery from "./components/gallery";
+import Fanart from "./components/fanart";
+import Pokemon from "./components/pokemon";
+import UserProfile from "./components/userProfile";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Navbar />
+        <div className="content">
+          <Routes>
+            <Route path="/" element={<p>Home Component</p>} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/fanart/:id" element={<Fanart />} />
+            <Route path="/pokemon/:id" element={<Pokemon />} />
+            <Route path="/user/:id" element={<UserProfile />} />
+          </Routes>
+        </div>
+      </div>
+    </Router>
   );
 }
 
