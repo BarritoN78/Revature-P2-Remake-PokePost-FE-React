@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 
 class Navbar extends Component {
   render() {
-    const { username, id } = this.props.user;
+    const { user } = this.props;
+    const username = user ? user.username : undefined;
+    const id = user ? user.id : undefined;
     return (
       <div>
         <Link to="/">

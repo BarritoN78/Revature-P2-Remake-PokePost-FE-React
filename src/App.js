@@ -18,7 +18,7 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <Navbar user={this.currentUser} onLogout={this.handleLogout} />
+        <Navbar user={this.state.currentUser} onLogout={this.handleLogout} />
         <div className="content">
           <Routes>
             <Route path="/" element={<Home />} />
