@@ -1,22 +1,31 @@
 import "./App.css";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/navbar";
+import Home from "./components/home";
 import Login from "./components/login";
 import Register from "./components/register";
 import Gallery from "./components/gallery";
 import Fanart from "./components/fanart";
 import Pokemon from "./components/pokemon";
 import UserProfile from "./components/userProfile";
+import { Component } from "react";
 
-function App() {
-  return (
-    <Router>
-      <div className="App">
-        <Navbar />
+class App extends Component {
+  state = {
+    currentUser: localStorage.getItem("user"),
+  };
+
+  render() {
+    return (
+      <div className="container">
+        <Navbar user={this.currentUser} onLogout={this.handleLogout} />
         <div className="content">
           <Routes>
-            <Route path="/" element={<p>Home Component</p>} />
-            <Route path="/login" element={<Login />} />
+            <Route path="/" element={<Home />} />
+            <Route
+              path="/login"
+              element={<Login onLogin={this.handleLogin} />}
+            />
             <Route path="/register" element={<Register />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/fanart/:id" element={<Fanart />} />
@@ -25,8 +34,17 @@ function App() {
           </Routes>
         </div>
       </div>
-    </Router>
-  );
+    );
+  }
+
+  handleLogin() {
+    this.setState({ currentUser: { id: 1, username: "randoMcGee" } }); //Load user from http request later
+  }
+
+  handleLogout() {
+    this.setState({ currentUser: undefined });
+    //Alert the user of logout success
+  }
 }
 
 export default App;
