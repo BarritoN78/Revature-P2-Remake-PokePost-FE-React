@@ -1,5 +1,19 @@
+:root {
+  color-scheme: light;
+  --page-color: #52d5f8;
+  --page-sec-color: #c6c3c3;
+  --comp-color: #5471f8;
+  --comp-sec-color: #fedf36;
+  --comp-tert-color: #03097d;
+  --font-color: #fedf36;
+  --font-sec-color: #000000;
+  --input-bg-inactive-color: rgba(254, 223, 54, 0.50);
+  --input-bg-active-color: rgba(254, 223, 54, 0.70);
+}
+
 body {
   margin: 0;
+  background-color: var(--page-color);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
