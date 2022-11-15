@@ -20,7 +20,7 @@ class Home extends Component {
             Find useful information about it and chat with other players about
             strategies here
           </p>
-          <Link to="/pokemon">Pokemon</Link>
+          <Link to="/pokedex">Pokedex</Link>
         </div>
       </div>
     );

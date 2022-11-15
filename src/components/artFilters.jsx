@@ -1,15 +1,11 @@
 import React, { Component } from "react";
 
 class ArtFilter extends Component {
-  state = {
-    fanart: {},
-  };
+  state = {};
   render() {
     return (
       <div>
-        <label id="ArtFilterSlctLbl" for="ArtFilterSlct">
-          Filter By:
-        </label>
+        <label id="ArtFilterSlctLbl">Filter By:</label>
         <select id="ArtFilterSlct">
           <option value="title">Title</option>
           <option value="tags">Tags</option>

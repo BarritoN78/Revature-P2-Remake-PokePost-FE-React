@@ -6,7 +6,7 @@ class Login extends Component {
   render() {
     return (
       <div className="formContainer">
-        <img src="https://picsum.photos/200" alt="PokePost Logo"></img>
+        <img src="images/PokePost.png" alt="PokePost Logo"></img>
         <form>
           <label id="loginEmailLbl">Email:</label>
           <input id="loginEmailTxt" type="text" />
