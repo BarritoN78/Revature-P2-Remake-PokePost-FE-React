@@ -37,10 +37,16 @@ li.navLinkList {
   color: var(--font-color);
 }
 
-a.navLinkRight {
+a.navLinkRight, button.navLinkRight {
   margin-top: 3vh;
   margin-right: 3vw;
   float:right;
+}
+
+button.navLinkRight {
+  color:var(--font-color);
+  background-color: var(--comp-tert-color);
+  border-color: var(--comp-sec-color);
 }
 
 div.content{

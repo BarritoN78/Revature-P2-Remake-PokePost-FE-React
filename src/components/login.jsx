@@ -14,8 +14,8 @@ class Login extends Component {
           <input id="loginPassTxt" type="text" />
           <button
             id="loginSubmitBtn"
-            type="submit"
-            onSubmit={this.props.onLogin}
+            type="button"
+            onClick={this.props.onLogin}
           >
             Login
           </button>

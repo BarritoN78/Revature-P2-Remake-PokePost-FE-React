@@ -33,9 +33,19 @@ class Navbar extends Component {
           </li>
         </ul>
         {id ? (
-          <Link className="navLinkList navLinkRight" to={"/user/" + id}>
-            {username}
-          </Link>
+          <>
+            <button
+              className="navLinkRight"
+              id="navLogoutBtn"
+              type="button"
+              onClick={this.props.onLogout}
+            >
+              Logout
+            </button>
+            <Link className="navLinkList navLinkRight" to={"/user/" + id}>
+              {username}
+            </Link>
+          </>
         ) : (
           <Link className="navLinkList navLinkRight" to="/login">
             Login

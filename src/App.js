@@ -1,5 +1,5 @@
 import "./App.css";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import Navbar from "./components/navbar";
 import Home from "./components/home";
 import Login from "./components/login";
@@ -16,6 +16,12 @@ class App extends Component {
   state = {
     currentUser: localStorage.getItem("user"),
   };
+
+  constructor() {
+    super();
+    this.handleLogin = this.handleLogin.bind(this);
+    this.handleLogout = this.handleLogout.bind(this);
+  }
 
   render() {
     return (
@@ -41,14 +47,21 @@ class App extends Component {
     );
   }
 
-  handleLogin() {
+  handleLogin = () => {
+    console.log("handleLogin called");
     this.setState({ currentUser: { id: 1, username: "randoMcGee" } }); //Load user from http request later
-  }
+    this.props.navigate("/");
+  };
 
-  handleLogout() {
+  handleLogout = () => {
     this.setState({ currentUser: undefined });
     //Alert the user of logout success
-  }
+  };
+}
+
+export function AppWithRouter(props) {
+  const navigate = useNavigate();
+  return <App navigate={navigate}></App>;
 }
 
 export default App;
